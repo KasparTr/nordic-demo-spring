@@ -18,10 +18,10 @@ public class ImageLabellingResponse {
     @JsonProperty("code")
     public Integer responseCode;
 
-    public ImageLabellingResponse(GoogleLabelResponse response, String details, Integer code){
+    public ImageLabellingResponse(GoogleLabelResponse response){
         this.response = response;
-        this.details = details;
-        this.responseCode = code;
+        this.details = "success";
+        this.responseCode = 200;
     }
 
     public ImageLabellingResponse(String error, String details, Integer code){
