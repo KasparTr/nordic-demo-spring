@@ -6,6 +6,7 @@ import com.nordic.demo.demo.model.*;
 import com.squareup.okhttp.*;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +29,7 @@ public class ImageController {
             = MediaType.parse("application/json; charset=utf-8");
     private Gson gson = new Gson();
 
-
+    @CrossOrigin()
     @RequestMapping("/image")
     public ImageLabellingResponse doImageLable(@RequestParam(name="imgUri") String imgUri,
                                             @RequestParam(name="key", defaultValue="wrong") String key) {
